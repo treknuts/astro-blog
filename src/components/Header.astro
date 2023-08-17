@@ -5,10 +5,17 @@ import Navigation from "./Navigation.astro";
 import ThemeIcon from "./ThemeIcon.astro";
 ---
 
+<style>
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+</style>
 <header>
   <nav>
     <Hamburger />
-    <ThemeIcon />
     <Navigation />
+    <ThemeIcon />
   </nav>
 </header>
