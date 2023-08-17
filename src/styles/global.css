@@ -5,6 +5,14 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
+a {
+  color: dodgerblue;
+}
+
+a:visited {
+  color: rgb(11, 123, 235);
+}
+
 body {
   min-height: 100vh;
   display: flex;
