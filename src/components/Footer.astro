@@ -1,0 +1,75 @@
+---
+import Social from "./Social.astro";
+
+const socials = [
+  {
+    platform: "Email",
+    url: "mailto:trevorknutson.complete@gmail.com",
+  },
+  {
+    platform: "Github",
+    url: "https://www.github.com/treknuts",
+  },
+  {
+    platform: "Codepen",
+    url: "https://codepen.io/treknuts",
+  },
+  {
+    platform: "LinkedIn",
+    url: "https://linkedin.com/in/treknuts",
+  },
+];
+---
+
+<style>
+  .footer {
+    width: 100%;
+    padding: 3em;
+    background-color: #1e1e1e;
+    display: grid;
+    place-content: center;
+    color: white;
+  }
+
+  .footer-content p {
+    text-align: center;
+  }
+
+  .footer-content ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    padding: 0;
+  }
+
+  .footer p {
+    font-weight: 500;
+  }
+
+  .footer p span {
+    text-transform: uppercase;
+    font-style: italic;
+  }
+
+  @media screen and (min-width: 636px) {
+    .footer-content ul {
+      flex-direction: row;
+      gap: 2em;
+    }
+  }
+</style>
+
+<div class="footer">
+  <div class="footer-content">
+    <p>Check my socials IFF you have <span>way</span> too much free time.</p>
+    <ul>
+      {
+        socials.map((social) => {
+          return <Social platform={social.platform} url={social.url} />;
+        })
+      }
+    </ul>
+  </div>
+</div>

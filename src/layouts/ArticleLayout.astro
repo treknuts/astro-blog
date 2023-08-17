@@ -1,0 +1,82 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Badge from "../components/Badge.astro";
+const { frontmatter } = Astro.props;
+import "../styles/global.css";
+
+var date = new Date(frontmatter.pubDate);
+
+const formatted = `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`;
+---
+
+<style>
+  .article-container {
+    margin: 0 auto;
+    width: min(100vh - 2em, 80ch);
+  }
+  img {
+    border-radius: 2em;
+    background-color: #1e1e1e;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .tags-container {
+    padding: 2em;
+    border-radius: 0.5em;
+    background: #bbb;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+  }
+
+  a {
+    color: #1e1e1e;
+    text-decoration: none;
+    margin-top: 1em;
+    margin-left: 1em;
+    position: relative;
+    padding: 0.5em;
+    width: max-content;
+  }
+
+  a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    width: 100%;
+    background: #f08080;
+    scale: 0 1;
+    transition: scale 250ms ease;
+  }
+
+  a:hover::after {
+    scale: 1 1;
+  }
+
+  a:hover {
+    color: dodgerblue;
+  }
+</style>
+<BaseLayout pageTitle={frontmatter.title}>
+  <p>{formatted}</p>
+  <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+  <p>
+    Written by <span style="font-weight: bold; color: dodgerblue"
+      >{frontmatter.author}</span
+    >
+  </p>
+  <slot />
+  <h2>Tags</h2>
+  <div class="tags-container">
+    {
+      frontmatter.tags.map((tag) => {
+        return <Badge name={tag} />;
+      })
+    }
+  </div>
+</BaseLayout>

@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "About me";
+
+const identity = {
+  name: "Treknuts",
+  from: "Fargo",
+  occupation: "Software Engineer",
+  hobbies: ["weight lifting", "gaming", "reading"],
+};
+
+const skills = [
+  "Java",
+  "PHP",
+  "GraphQL",
+  "Spring",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Astro",
+];
+
+const textAccentColor = "dodgerblue";
+const fontWeight = "800";
+const textCase = "uppercase";
+---
+
+<style define:vars={{ textAccentColor, fontWeight, textCase }}>
+  h1 {
+    color: var(--textAccentColor);
+    font-size: 4rem;
+  }
+
+  .skill {
+    color: var(--textAccentColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+
+  .hobbies {
+    text-transform: var(--textCase);
+    font-weight: var(--fontWeight);
+    color: var(--textAccentColor);
+  }
+</style>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>I am {identity.name} from {identity.from}</h2>
+  <p>
+    I know you didn't ask, but this is a blog about shit floating around in my
+    brain.
+  </p>
+  <p>
+    I know you also didn't ask, but some of my hobbies include <span
+      class="hobbies"
+      >{
+        identity.hobbies
+          .slice(0, -1)
+          .join(", ")
+          .concat(", and " + identity.hobbies.slice(-1))
+      }.</span
+    >
+  </p>
+
+  <p>I have professional experience with the following web technologies:</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+</BaseLayout>
