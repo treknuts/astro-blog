@@ -1,5 +1,4 @@
 <script>
-  let name = "Treknuts";
   export let messages;
   let greeting = messages[0];
 
@@ -8,7 +7,7 @@
   };
 </script>
 
-<h1>{greeting}, {name}!</h1>
+<h2>{greeting}!</h2>
 <p>Not feeling that greeting?</p>
 <button on:click={randomize}>Try a new one!</button>
 
