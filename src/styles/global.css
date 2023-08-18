@@ -30,6 +30,10 @@ html.dark {
   color: #fff;
 }
 
+.dark .tags-container {
+  background-color: #1e1e1e;
+}
+
 * {
   box-sizing: border-box;
 }
