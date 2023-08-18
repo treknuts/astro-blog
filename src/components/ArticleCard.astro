@@ -1,0 +1,41 @@
+---
+const { article } = Astro.props;
+const imgUrl = article.frontmatter.image.url;
+---
+
+<style define:vars={{ imgUrl }}>
+  .article-card {
+    display: flex;
+    border-radius: 0.5em;
+    max-width: 100%;
+    background-color: #eee;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .image-container {
+    min-width: 33%;
+    min-height: 100%;
+  }
+
+  .card-body {
+    padding: 2em;
+  }
+</style>
+
+<div class="article-card">
+  <div
+    class="image-container"
+    style={{
+      background: `url(${article.frontmatter.image.url})`,
+      backgroundSize: "cover",
+      borderTopLeftRadius: "inherit",
+      borderBottomLeftRadius: "inherit",
+    }}
+  >
+  </div>
+  <div class="card-body">
+    <a href={article.url}><h4>{article.frontmatter.title}</h4></a>
+    <p>{article.frontmatter.description}</p>
+  </div>
+</div>
