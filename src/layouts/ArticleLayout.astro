@@ -64,7 +64,11 @@ const formatted = `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`;
 </style>
 <BaseLayout pageTitle={frontmatter.title}>
   <p>{formatted}</p>
-  <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+  <img
+    transition:name={frontmatter.title}
+    src={frontmatter.image.url}
+    alt={frontmatter.image.alt}
+  />
   <p>
     Written by <span style="font-weight: bold; color: dodgerblue"
       >{frontmatter.author}</span

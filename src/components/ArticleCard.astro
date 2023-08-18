@@ -25,6 +25,7 @@ const imgUrl = article.frontmatter.image.url;
 
 <div class="article-card">
   <div
+    transition:name=`${article.frontmatter.title}`
     class="image-container"
     style={{
       background: `url(${article.frontmatter.image.url})`,
