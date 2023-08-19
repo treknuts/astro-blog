@@ -1,0 +1,16 @@
+---
+const { src, height, width } = Astro.props;
+---
+
+<style define:vars={{ height, width }}>
+  img {
+    min-height: var(--height);
+    width: var(--width);
+    aspect-ratio: 16 / 9;
+    display: block;
+    object-fit: cover;
+    border-radius: 0.5em;
+  }
+</style>
+
+<img src={src} />
