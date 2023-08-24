@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Greeting from "../components/Greeting.svelte";
+import TwoColumns from "../components/TwoColumns.astro";
 const pageTitle = "Nobody Asked";
 ---
 
@@ -22,4 +23,14 @@ const pageTitle = "Nobody Asked";
       "Zdravstvuyte",
     ]}
   />
+  <TwoColumns>
+    <div slot="left">
+      <h1><a href="/blog">Blog!</a></h1>
+      <p>Check out some of my articles!</p>
+    </div>
+    <div slot="right">
+      <h1><a href="/about">About me!</a></h1>
+      <p>Learn more about me :)</p>
+    </div>
+  </TwoColumns>
 </BaseLayout>
