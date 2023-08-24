@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<style>
+  .four-oh-four-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>
+
+<BaseLayout pageTitle="Oops!">
+  <div class="four-oh-four-container">
+    <h2>Oh no!</h2>
+    <p>
+      Looks like that page hasn't been implemented yet! This is almost certainly
+      the developer's fault. Until he gets his shit together, let's just take
+      you <a href="/">home</a>.
+    </p>
+  </div>
+</BaseLayout>
