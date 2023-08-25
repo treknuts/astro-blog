@@ -9,7 +9,9 @@
 
 <div class="greeting">
   <h1>{greeting}!</h1>
-  <button on:click={randomize}>Randomize Greeting!</button>
+  <button on:click={randomize} ria-label="Randomize greeting button"
+    >Randomize Greeting!</button
+  >
 </div>
 
 <style>
