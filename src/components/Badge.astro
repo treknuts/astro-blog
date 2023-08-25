@@ -7,8 +7,8 @@ const { name } = Astro.props;
     line-height: 75%;
     padding: 1em 0.5em;
     border-radius: 0.25em;
-    background-color: dodgerblue;
-    color: white;
+    background-color: var(--primary);
+    color: var(--text);
     transition: scale 250ms ease;
     cursor: pointer;
     transition: box-shadow 150ms ease;
@@ -28,6 +28,4 @@ const { name } = Astro.props;
   }
 </style>
 
-<div class="badge">
-  <a href=`/tags/${name}`>{name}</a>
-</div>
+<a class="badge" href=`/tags/${name}`>{name}</a>

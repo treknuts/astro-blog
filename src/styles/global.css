@@ -1,16 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Abel&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
+:root {
+  --text: #221211;
+  --background: #ffffff;
+  --primary: #51a0a4;
+  --secondary: #f0e1e1;
+  --accent: #244648;
+}
+
+[data-theme="dark"] {
+  --text: #ffffff;
+  --background: #221211;
+  --primary: #51a0a4;
+  --secondary: #261313;
+  --accent: #59a8ac;
+}
+
 html {
-  background-color: #f1f5f9;
+  background-color: var(--background);
+  color: var(--text);
   font-family: "Poppins", sans-serif;
 }
 
-a {
-  color: dodgerblue;
-}
-
-a:visited {
-  color: rgb(11, 123, 235);
+main a {
+  color: var(--primary);
 }
 
 body {
@@ -19,24 +32,6 @@ body {
   flex-direction: column;
   margin: 0;
   padding: 0;
-}
-
-html.dark {
-  background-color: #222;
-  color: #fff;
-}
-
-.dark .nav-links a {
-  color: #fff;
-}
-
-.dark .tags-container {
-  background-color: #1e1e1e;
-}
-
-.dark .article-card,
-.dark .col {
-  background-color: #1e1e1e;
 }
 
 h1 a {
@@ -57,13 +52,13 @@ h1::after {
   position: absolute;
   height: 4px;
   width: 50px;
-  background-color: dodgerblue;
+  background-color: var(--primary);
   bottom: 0;
   left: 0;
 }
 
 .col {
-  background-color: #eee;
+  background-color: var(--secondary);
 }
 
 ul {
@@ -86,7 +81,7 @@ h1 {
 
 header {
   width: 100%;
-  background-color: #1e1e1e;
+  background-color: var(--secondary);
   padding: 1em;
 }
 
@@ -100,7 +95,7 @@ header {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: #ff9776;
+  background-color: var(--primary);
   border-radius: 0.5em;
 }
 
@@ -109,8 +104,8 @@ header {
   margin: 0;
 }
 
-.nav-links a {
-  color: white;
+.nav-link {
+  color: var(--text);
   display: block;
   text-align: center;
   text-decoration: none;
@@ -120,25 +115,25 @@ header {
   position: relative;
 }
 
-.nav-links a::after {
+.nav-link::after {
   content: "";
   position: absolute;
   height: 2px;
   width: 100%;
   bottom: 0;
   left: 0;
-  background-color: #f08080;
+  background-color: var(--accent);
   scale: 0 1;
   transition: scale 250ms ease;
 }
 
-.nav-links a:hover,
-.nav-links a:focus {
-  color: dodgerblue;
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--primary);
 }
 
-.nav-links a:hover::after,
-.nav-links a:focus::after {
+.nav-link:hover::after,
+.nav-link:focus::after {
   scale: 1 1;
 }
 
@@ -158,7 +153,6 @@ header {
     justify-content: center;
     position: static;
     width: auto;
-    color: #1e1e1e;
   }
 
   .nav-links a {

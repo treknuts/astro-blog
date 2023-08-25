@@ -13,11 +13,12 @@
 
 <style>
   button {
+    border: none;
     font-size: 1.15rem;
     padding: 1em 0.5em;
     border-radius: 0.25em;
-    background-color: dodgerblue;
-    color: white;
+    background-color: var(--primary);
+    color: var(--text);
     transition: scale 250ms ease;
     cursor: pointer;
     transition: box-shadow 150ms ease;

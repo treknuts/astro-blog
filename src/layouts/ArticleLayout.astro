@@ -25,41 +25,10 @@ const formatted = `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`;
   .tags-container {
     padding: 2em;
     border-radius: 0.5em;
-    background: #bbb;
+    background: var(--accent);
     display: flex;
     justify-content: center;
     gap: 2em;
-  }
-
-  a {
-    color: #1e1e1e;
-    text-decoration: none;
-    margin-top: 1em;
-    margin-left: 1em;
-    position: relative;
-    padding: 0.5em;
-    width: max-content;
-  }
-
-  a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    width: 100%;
-    background: #f08080;
-    scale: 0 1;
-    transition: scale 250ms ease;
-  }
-
-  a:hover::after {
-    scale: 1 1;
-  }
-
-  a:hover {
-    color: dodgerblue;
   }
 </style>
 <BaseLayout pageTitle={frontmatter.title}>

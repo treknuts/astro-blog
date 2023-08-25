@@ -20,19 +20,18 @@ const skills = [
   "Astro",
 ];
 
-const textAccentColor = "dodgerblue";
 const fontWeight = "800";
 const textCase = "uppercase";
 ---
 
-<style define:vars={{ textAccentColor, fontWeight, textCase }}>
+<style define:vars={{ fontWeight, textCase }}>
   h1 {
-    color: var(--textAccentColor);
+    color: var(--primary);
     font-size: 4rem;
   }
 
   .skill {
-    color: var(--textAccentColor);
+    color: var(--primary);
     font-weight: var(--fontWeight);
     text-transform: var(--textCase);
   }
@@ -40,7 +39,7 @@ const textCase = "uppercase";
   .hobbies {
     text-transform: var(--textCase);
     font-weight: var(--fontWeight);
-    color: var(--textAccentColor);
+    color: var(--primary);
   }
 </style>
 <BaseLayout pageTitle={pageTitle}>
