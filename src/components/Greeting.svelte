@@ -7,11 +7,26 @@
   };
 </script>
 
-<h2>{greeting}!</h2>
-<p>Not feeling that greeting?</p>
-<button on:click={randomize}>Try a new one!</button>
+<div class="greeting">
+  <h1>{greeting}!</h1>
+  <button on:click={randomize}>Randomize Greeting!</button>
+</div>
 
 <style>
+  .greeting {
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 3em;
+    border-radius: 2em;
+  }
+
+  .greeting h1 {
+    margin-bottom: 0.5em;
+  }
+
   button {
     border: none;
     font-size: 1.15rem;
