@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import Badge from "../components/Badge.astro";
-const { post, frontmatter } = Astro.props;
+const { frontmatter } = Astro.props;
 import "../styles/global.css";
 
 var date = new Date(frontmatter.pubDate);
@@ -16,7 +16,6 @@ const formatted = `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`;
   }
   img {
     border-radius: 2em;
-    background-color: #1e1e1e;
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -30,6 +29,11 @@ const formatted = `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`;
     justify-content: center;
     gap: 2em;
   }
+
+  .author span {
+    font-weight: 900;
+    color: var(--primary);
+  }
 </style>
 <BaseLayout pageTitle={frontmatter.title}>
   <p>{formatted}</p>
@@ -38,10 +42,8 @@ const formatted = `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`;
     src={frontmatter.image.url}
     alt={frontmatter.image.alt}
   />
-  <p>
-    Written by <span style="font-weight: bold; color: dodgerblue"
-      >{frontmatter.author}</span
-    >
+  <p class="author">
+    Written by <span>{frontmatter.author}</span>
   </p>
   <slot />
   <h2>Tags</h2>

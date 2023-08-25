@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-slug: /posts/post-1
+slug: /posts/here-we-go-again
 title: "Here We Go Again"
 pubDate: 2023-08-18
-description: "This is the first post of my new Astro blog."
+description: "Ranting about things that have zero impact on my life..."
 author: "Trevor Knutson"
 image:
   url: "https://images.unsplash.com/photo-1588395532936-179b5891b4c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1167&q=80"
