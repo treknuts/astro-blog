@@ -136,4 +136,4 @@ html[data-theme="light"] .moon {
 }
 ```
 
-I think that about does it. My favorite part of this implementation is that you can easily change your theme. All you need to do is change the CSS variables in one spot. I believe this falls under the DRY (Don't repeat yourself) principle I learned about reading (The Pragmatic Programmer)[https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary/]. That's a great book I recommend to anyone that is a software engineer/web developer.
+I think that about does it. My favorite part of this implementation is that you can easily change your theme. All you need to do is change the CSS variables in one spot. I believe this falls under the DRY (Don't repeat yourself) principle I learned about reading [The Pragmatic Programmer](https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary/). That's a great book I recommend to anyone that is a software engineer/web developer.
