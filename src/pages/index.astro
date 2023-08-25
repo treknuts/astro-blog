@@ -5,6 +5,34 @@ import TwoColumns from "../components/TwoColumns.astro";
 const pageTitle = "Nobody Asked";
 ---
 
+<style>
+  .index-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+    width: min(100vw - 2em, 300px);
+    height: 14em;
+    background-color: var(--secondary);
+
+    border-radius: 0.5em;
+    transition: scale 150ms ease;
+  }
+
+  .index-card h1 {
+    color: var(--accent);
+  }
+
+  .index-card p {
+    color: var(--text);
+  }
+
+  .index-card:hover {
+    scale: 1.05;
+  }
+</style>
+
 <BaseLayout pageTitle={pageTitle}>
   <Greeting
     client:load
@@ -25,12 +53,16 @@ const pageTitle = "Nobody Asked";
   />
   <TwoColumns>
     <div slot="left">
-      <h1><a href="/blog">Blog!</a></h1>
-      <p>Check out some of my articles!</p>
+      <a class="index-card" href="/blog"
+        ><h1>Blog!</h1>
+        <p>Check out some of my articles.</p>
+      </a>
     </div>
     <div slot="right">
-      <h1><a href="/about">About me!</a></h1>
-      <p>Learn more about me :)</p>
+      <a class="index-card" href="/about"
+        ><h1>About me!</h1>
+        <p>See what I'm all about.</p>
+      </a>
     </div>
   </TwoColumns>
 </BaseLayout>

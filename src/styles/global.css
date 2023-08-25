@@ -56,10 +56,6 @@ h1::after {
   left: 0;
 }
 
-.col {
-  background-color: var(--secondary);
-}
-
 ul {
   list-style-type: none;
 }
@@ -145,7 +141,56 @@ header {
   border-radius: 0.5em;
 }
 
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 0;
+  margin: 0;
+}
+
+.tag-element {
+  margin: 0 auto;
+  text-decoration: none;
+  display: grid;
+  place-content: center;
+  width: min(100vw - 2em, 300px);
+  background-color: var(--accent);
+  color: var(--secondary);
+  border-radius: 0.5em;
+  transition: scale 150ms ease;
+}
+
+.tag-element:hover {
+  background-color: var(--primary);
+  scale: 1.05;
+}
+
+.tags {
+  display: grid;
+  gap: 1em;
+  margin-top: 2em;
+}
+
+#themeToggle {
+  display: none;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 @media screen and (min-width: 636px) {
+  #themeToggle {
+    display: block;
+  }
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
   .nav-links {
     display: flex;
     gap: 4em;
@@ -164,5 +209,9 @@ header {
 
   header {
     padding: 2em;
+  }
+  .tags {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
   }
 }
