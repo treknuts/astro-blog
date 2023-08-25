@@ -1,5 +1,5 @@
 ---
-const { src, height, width } = Astro.props;
+const { src, alt, height, width } = Astro.props;
 ---
 
 <style define:vars={{ height, width }}>
@@ -13,4 +13,4 @@ const { src, height, width } = Astro.props;
   }
 </style>
 
-<img src={src} />
+<img src={src} alt={alt} />
