@@ -11,13 +11,13 @@ pubDate: 2023-08-25
 tags: ["JavaScript", "HTML", "CSS", "Web Design"]
 ---
 
-## Fine... I'll let the user choose the theme!
+## Fine! I'll let the user choose...
 
-Honestly, I think light themes should be illegal. I really enjoy some, but it's diffucult for me ***personally*** to use a website or app that only has a light theme. Since I'm only one person with an opinion, let's let whomever visits my site/app decide whether they want to use the light or dark mode.
+Personally, I think light themes should be illegal. I really enjoy some, but it's diffucult for me ***personally*** to use a website or app that only has a light theme. Since I'm only one person with an opinion, let's let whomever visits my site/app decide whether they want to use the light or dark mode.
 
-## Define Your Theme
+## Define your theme
 
-Modern CSS let's us define variables. In this scenario I'm only defining colors as variables, but you can do so much more. You can define gradients, borders, spacing, and much more with CSS variables. For the very site you're on, here are is the theme for light and dark modes.
+Modern CSS let's us define variables. In this scenario, I'm only defining colors as variables, but you can use them for anything you want. You can define gradients, borders, spacing, and much more with CSS variables. For the very site you're on, here are is the theme for light and dark modes. 
 
 ```css
 /* Light theme colors */
@@ -39,17 +39,19 @@ Modern CSS let's us define variables. In this scenario I'm only defining colors 
 }
 ```
 
-For the dark theme I'm using the data attribute `theme`. If it's set to dark on the `html` element, the variables will have those values.
+For the `dark` theme, I'm using the data attribute `theme`. If it's set to `dark` on the `html` element, the variables will have those values. Otherwise, it will use the `light` theme colors defined in the `:root` psuedo element.
+
+If you don't have the patience for picking colors, check out [Realtime Colors](https://www.realtimecolors.com) like I did. 
 
 ## Apply the varibles where you want them
 
-This bit is subjective. It's a good idea to follow the [60/30/10 rule](https://www.youtube.com/watch?v=UWwNIMHFdW4&t=139s), but really, it's up to you. Color theory and psychology are way out of scope for this post. Anywho! Here are some examples of using the variables in your CSS selectors:
+This bit is completely subjective. It's a good idea to follow the [60/30/10 rule](https://www.youtube.com/watch?v=UWwNIMHFdW4&t=139s), but really, it's up to you. Color theory and psychology are way out of scope for this post. Anywho! Here are some examples of using the variables in your CSS selectors:
 
 ```css
 html {
+  /* other styles */
   background-color: var(--background);
   color: var(--text);
-  font-family: "Poppins", sans-serif;
 }
 
 .primary-btn {
@@ -59,11 +61,11 @@ html {
 }
 ```
 
-The nice thing is that the root `html` element defines the value of the variables, but they have the same name. So, `var(--background)` will be different depending upon the `data-theme` value in the `html` element.
+One nice thing is that the root `html` element defines the value of the variables, but they can have the same name. So, `var(--background)` will be different depending upon the `theme` value in the `html` element. If you have colors that are the same regardless of `light` or `dark` mode, you can define the variable once in the `:root` element.
 
-## Storing selected theme
+## Persist the theme
 
-Here's where the magic happens. By default, we will set the `data-theme` attribute depending on the user's system settings with the `prefers-color-scheme` setting. To persist the theme when the page is refreshed or the user navigates to a different page, we will store the `theme` in the browsers `localstorage`.
+By default, we will set the `data-theme` attribute depending on the user's system settings with the `prefers-color-scheme` using `window.matchMedia`. To persist the theme when the page is refreshed or the user navigates to a different page, we will store the `theme` in the browser's `localstorage`.
 
 ```javascript
 const theme = (() => {
@@ -85,9 +87,9 @@ const theme = (() => {
   window.localStorage.setItem("theme", theme);
 ```
 
-## Let the user toggle the theme
+## Let the user choose
 
-Now we let the user toggle the theme. In my implementation, we put a button in the navigation menu that the user can click to toggle the theme. We just need to grab the button from the dom and add an even listener to it and toggle the theme based on what's in `localstorage`
+Now we let the user toggle the theme. In my implementation, we put a button in the navigation menu that the user can click to toggle the theme. We just need to grab the button from the dom and add an even listener to it. Then I toggle the theme based on what's in `localstorage`
 
 ```javascript
   const handleToggleClick = () => {
@@ -111,9 +113,9 @@ Now we let the user toggle the theme. In my implementation, we put a button in t
 
 This took me a minute to figure out because things look a little backward in the code, so I'm going to walk through that for my own sake. Stick around if you need the additional explanation.
 
-First, I check if the current theme `isDark` using the `data-theme` attribute in the `const isDark = element.dataset.theme === "dark"` line. Now, if the theme is currently set to `dark`, we need to ***turn the lights on*** and set it to `light`. If the theme isn't `dark` we ***turn the lights off*** and set it to `light`.
+First, I check if the current theme `isDark` using the `data-theme` attribute in the `const isDark = element.dataset.theme === "dark"` line. Now, if the theme is currently set to `dark`, we need to ***turn the lights on*** and set it to `light`. If the theme is `light` we ***turn the lights off*** and set it to `dark`.
 
-## **Bonus**: change the theme icon
+## **Bonus**: Update the theme icon
 
 A feature I think is cool is changing the icon based on the current theme. I have two icons, one for the dark theme, and one for the light theme. The icon is a sun for the dark theme, indicating if the user clicks it they will ***turn the lights on***. The icon for the light theme is a moon, indicating if the user clicks it they will ***turn the lights off***. CSS allows us to access `data` attributes to hide and show the icons depending on the attribute's value. Check it out:
 
@@ -138,4 +140,4 @@ html[data-theme="light"] .moon {
 
 I think that about does it. My favorite part of this implementation is that you can easily change your theme. All you need to do is change the CSS variables in one spot. I believe this falls under the DRY (Don't repeat yourself) principle I learned about reading [The Pragmatic Programmer](https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary/). That's a great book I recommend to anyone that is a software engineer/web developer.
 
-If you want to see this implementation in action. Smack the theme icon in the navigation menu of this very page!
+If you want to see this implementation in action, smack the theme icon in the navigation menu of this very page!
