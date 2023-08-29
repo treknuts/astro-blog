@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 const { pageTitle } = Astro.props;
+import { GoogleAnalytics } from "astro-analytics";
 ---
 
 <html lang="en">
@@ -15,6 +16,7 @@ const { pageTitle } = Astro.props;
     <meta name="description" content="Treknuts software development blog" />
     <title>{pageTitle}</title>
   </head>
+  <GoogleAnalytics id="G-SWKSW1YNC6" />
   <body>
     <Header />
     <main>
