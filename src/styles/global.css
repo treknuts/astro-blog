@@ -8,7 +8,7 @@
   --accent: #244648;
 }
 
-[data-theme="dark"] {
+:root.dark {
   --text: #ffffff;
   --background: #221211;
   --secondary: #242424;
