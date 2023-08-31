@@ -1,8 +1,12 @@
----
----
-
-<div class="hamburger">
+<div id="hamburger">
   <span class="line"></span>
   <span class="line"></span>
   <span class="line"></span>
 </div>
+
+<script is:inline>
+document.getElementById("hamburger").addEventListener("click", () => {
+  console.log("Toggling mobile nav menu");
+  document.querySelector(".nav-links").classList.toggle("expanded");
+});
+</script>
