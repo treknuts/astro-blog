@@ -1,6 +1,6 @@
 ---
 import { GoogleAnalytics } from "astro-analytics";
-import { ViewTransitions } from "astro:transitions";
+import Head from "../components/Head.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
@@ -8,16 +8,7 @@ const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <!-- Should move this to a prop probably for changing it for every page. Namely articles -->
-    <meta name="description" content="Treknuts software development blog" />
-    <title>{pageTitle}</title>
-    <ViewTransitions />
-  </head>
+  <Head pageTitle={pageTitle} />
   <GoogleAnalytics id="G-SWKSW1YNC6" />
   <body>
     <Header />

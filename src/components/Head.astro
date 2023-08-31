@@ -1,0 +1,18 @@
+---
+import { ViewTransitions } from "astro:transitions";
+const { pageTitle } = Astro.props;
+---
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <!-- Should move this to a prop probably for changing it for every page. Namely articles -->
+  <meta name="description" content="Treknuts software development blog" />
+  <title>{pageTitle} | Nobody Asked</title>
+  <ViewTransitions />
+  <script
+    src="https://kit.fontawesome.com/f3b8f87e17.js"
+    crossorigin="anonymous"></script>
+</head>
