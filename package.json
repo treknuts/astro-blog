@@ -10,10 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.2.0",
     "@astrojs/rss": "^2.4.4",
     "@astrojs/svelte": "^4.0.0",
     "astro": "^3.0.2",
     "astro-analytics": "^2.6.0",
-    "svelte": "^4.2.0"
+    "svelte": "^4.2.0",
+    "typescript": "^5.2.2"
   }
 }
