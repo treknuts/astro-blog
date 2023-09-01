@@ -74,7 +74,7 @@ fn main() {
 #include <iostream>
 
 int main() {
-    std::count << "Hello, World!" << std::endl;
+    std::cout << "Hello, World!" << std::endl;
     return 0;
 }
 ```
