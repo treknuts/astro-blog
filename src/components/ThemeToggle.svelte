@@ -1,6 +1,10 @@
 <script>
   let isDark;
 
+  function onMount() {
+    isDark = window.localStorage.theme === "dark" ? true : false;
+  }
+
   function handleToggleClick() {
     const element = document.documentElement;
     isDark = element.dataset.theme === "dark";
@@ -13,10 +17,6 @@
       element.dataset.theme = "dark";
     }
   }
-
-  //   document
-  //     .getElementById("themeToggle")
-  //     .addEventListener("click", handleToggleClick);
 </script>
 
 <button

@@ -81,6 +81,8 @@ header {
 #hamburger {
   padding-right: 20px;
   cursor: pointer;
+  border: none;
+  background: transparent;
 }
 
 #hamburger .line {
