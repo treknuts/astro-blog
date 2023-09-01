@@ -17,22 +17,41 @@
   border: 0;
   background: none;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  width: 40px;
 }
 
-.sun {
-  fill: transparent;
+.fa-sun {
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1080deg);
+  transition: top 400ms ease, transform 400ms ease;
 }
 
-.moon {
-  fill: var(--text);
+.fa-moon {
+  position: absolute;
+  color: var(--text);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  transition: top 400ms ease, transform 400ms ease;
 }
 
-html[data-theme="dark"] .sun {
-  fill: white;
+html[data-theme="dark"] .fa-sun {
+  color: var(--text);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
 }
 
-html[data-theme="dark"] .moon {
-  fill: transparent;
+html[data-theme="dark"] .fa-moon {
+  color: var(--text);
+  top: 200%;
+  transform: translate(-50%, -50%) rotate(-720deg);
 }
 
 html {
