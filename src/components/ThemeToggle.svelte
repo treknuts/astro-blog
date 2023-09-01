@@ -37,24 +37,3 @@
     />
   </svg>
 </button>
-
-<style>
-  #themeToggle {
-    border: 0;
-    background: none;
-    cursor: pointer;
-  }
-  .sun {
-    fill: transparent;
-  }
-  .moon {
-    fill: var(--text);
-  }
-
-  html[data-theme="dark"] .sun {
-    fill: white;
-  }
-  html[data-theme="dark"] .moon {
-    fill: transparent;
-  }
-</style>
