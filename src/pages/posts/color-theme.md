@@ -9,6 +9,7 @@ image:
   alt: "Image with a dark cup of coffee and a cup of milk"
 pubDate: 2023-08-25
 tags: ["JavaScript", "HTML", "CSS", "Web Design"]
+draft: false
 ---
 
 ## Fine! I'll let the user choose...

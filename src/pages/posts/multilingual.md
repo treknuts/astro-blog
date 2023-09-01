@@ -9,6 +9,7 @@ image:
   alt: "Thumbnail of Astro arcs."
 pubDate: 2023-25-08
 tags: ["Rant", "Java", "PHP", "Kotlin", "HTML", "JavaScript", "Rust", "C++"]
+draft: false
 ---
 
 ### Hello, World!
