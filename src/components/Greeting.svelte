@@ -1,9 +1,19 @@
 <script>
   export let messages;
   let greeting = messages[0];
+  // Start with the first
+  let currentIndex = 0;
 
   const randomize = () => {
-    greeting = messages[Math.floor(Math.random() * messages.length)];
+    let newIndex = Math.floor(Math.random() * messages.length);
+
+    console.log("Current index: ", currentIndex);
+    if (newIndex === currentIndex) {
+      newIndex++;
+    }
+    console.log("Selecting index: ", newIndex);
+    currentIndex = newIndex;
+    greeting = messages[newIndex];
   };
 </script>
 
