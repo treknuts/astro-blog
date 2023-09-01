@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 const { article } = Astro.props;
 ---
 
@@ -66,10 +67,12 @@ const { article } = Astro.props;
 <a class="article-link" href={article.url}>
   <div class="article-card">
     <div class="image-wrapper">
-      <img
+      <Image
         transition:name={article.frontmatter.slug}
         src={article.frontmatter.image.url}
         alt={article.frontmatter.image.alt}
+        width="310"
+        height="225"
       />
     </div>
     <div class="card-body">

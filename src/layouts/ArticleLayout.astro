@@ -3,10 +3,15 @@ import BaseLayout from "./BaseLayout.astro";
 import Badge from "../components/Badge.astro";
 import FontAwesomeArrow from "../components/FontAwesomeArrow.astro";
 import "../styles/global.css";
+import { Image } from "astro:assets";
 
 const { frontmatter } = Astro.props;
-var date = new Date(frontmatter.pubDate);
-const formatted = `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`;
+const formatted = new Date(frontmatter.pubDate).toLocaleDateString("en-us", {
+  weekday: "long",
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
 ---
 
 <style>
@@ -68,10 +73,12 @@ const formatted = `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`;
     <FontAwesomeArrow height="1.5em" />Back to blog
   </a>
   <p>{formatted}</p>
-  <img
+  <Image
     transition:name={frontmatter.slug}
     src={frontmatter.image.url}
     alt={frontmatter.image.alt}
+    width="775"
+    height="500"
   />
   <p class="author">
     Written by <span>{frontmatter.author}</span>
