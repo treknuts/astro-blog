@@ -5,6 +5,7 @@ const { article } = Astro.props;
 <style>
   .article-card {
     display: flex;
+    flex-direction: column;
     padding: 0;
     border-radius: 1em;
     width: 100%;
@@ -14,34 +15,68 @@ const { article } = Astro.props;
   }
 
   .image-wrapper {
-    max-width: 40%;
-    min-height: 225px;
-    max-height: 225px;
+    width: 100%;
+    height: 250px;
   }
 
   .image-wrapper > img {
     object-fit: cover;
+    border-radius: 1em 1em 0 0;
     width: 100%;
     height: 100%;
-    border-top-left-radius: 1em;
-    border-bottom-left-radius: 1em;
+  }
+  .card-body {
+    padding: 1em;
   }
 
-  .card-body {
-    padding: 2em;
+  .article-link {
+    color: inherit;
+    text-decoration: none;
+    transition: scale 200ms ease;
+  }
+
+  .article-link:hover,
+  .article-link:focus {
+    scale: 1.035;
+  }
+
+  @media screen and (min-width: 636px) {
+    .article-card {
+      flex-direction: row;
+    }
+
+    .image-wrapper {
+      max-width: 40%;
+      min-height: 225px;
+      max-height: 225px;
+    }
+
+    .image-wrapper > img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 1em 0 0 1em;
+    }
+    .card-body {
+      padding: 2em;
+    }
   }
 </style>
 
-<div class="article-card">
-  <div class="image-wrapper">
-    <img
-      transition:name={article.frontmatter.slug}
-      src={article.frontmatter.image.url}
-      alt={article.frontmatter.image.alt}
-    />
+<a class="article-link" href={article.url}>
+  <div class="article-card">
+    <div class="image-wrapper">
+      <img
+        transition:name={article.frontmatter.slug}
+        src={article.frontmatter.image.url}
+        alt={article.frontmatter.image.alt}
+      />
+    </div>
+    <div class="card-body">
+      <h3>
+        {article.frontmatter.title}
+      </h3>
+      <p>{article.frontmatter.description}</p>
+    </div>
   </div>
-  <div class="card-body">
-    <a href={article.url}><h4>{article.frontmatter.title}</h4></a>
-    <p>{article.frontmatter.description}</p>
-  </div>
-</div>
+</a>
