@@ -24,6 +24,6 @@
   on:click={handleToggleClick}
   aria-label="Theme toggle button"
 >
-  <i class="fa-regular fa-sun fa-2x" />
-  <i class="fa-regular fa-moon fa-2x" />
+  <i class="fa-solid fa-sun fa-2x" />
+  <i class="fa-solid fa-moon fa-2x" />
 </button>
