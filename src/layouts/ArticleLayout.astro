@@ -81,6 +81,9 @@ const formatted = new Date(frontmatter.pubDate).toLocaleDateString("en-us", {
     height="500"
   />
   <p class="author">
+    Photo credit: <span>{frontmatter.image.credit}</span>
+  </p>
+  <p class="author">
     Written by <span>{frontmatter.author}</span>
   </p>
   <slot />

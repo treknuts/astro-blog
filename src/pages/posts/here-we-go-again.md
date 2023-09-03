@@ -7,7 +7,8 @@ description: "Ranting about things that have zero impact on my life..."
 author: "Trevor Knutson"
 image:
   url: "https://images.unsplash.com/photo-1588395532936-179b5891b4c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1167&q=80"
-  alt: "A big red barn"
+  alt: "Red barn established in 1918 Located in Southern Saskatchewan"
+  credit: "sawyer"
 tags: ["Astro", "Blogging", "Rant"]
 draft: false
 ---

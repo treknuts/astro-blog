@@ -7,21 +7,21 @@ description: "My experience as an Astro newbie going from Astro 2.x to 3.0"
 image:
   url: "https://astro.build/_astro/blog-hero-post-header.bd092747.webp"
   alt: "Graphic of the number three signifying the version three release of Astro."
+  credit: "Astro Blog"
 pubDate: 2023-08-25
 tags: ["Astro", "HTML", "CSS", "JavaScript", "Svelte"]
 draft: false
 ---
 
-
 ## Hello, Astro v3.0!
 
-Since I'm an Astro newbie, a lot of the changes don't mean a lot to me, but a cool experimental feature caught my eye a few weeks ago, *ViewTransitions*! I really enjoyed the named transitions behavior with the morph effect applied to images while navigating between the blog page and the article itself. 
+Since I'm an Astro newbie, a lot of the changes don't mean a lot to me, but a cool experimental feature caught my eye a few weeks ago, _ViewTransitions_! I really enjoyed the named transitions behavior with the morph effect applied to images while navigating between the blog page and the article itself.
 
 This was all fine and dandy until my theme toggler and mobile navigation button stopped working! The soft navigation was wiping out things like `data-theme="dark/light"` attribute for dark/light theme, and the `expanded` class for opening and closing the mobile navigation menu. Also, for whatever reason, the even listeners themselves weren't firing after navigating to another page.
 
 ## My (probably incorrect) Solution
 
-After a lot of debugging and banging my head against my desk, I took a shot in the dark. My solution? *Svelte Component*! This simple migration to Svelte components with the `transition:persist` and `client:load` attributes cured my ailments. The code mostly remained the same with minor changes.
+After a lot of debugging and banging my head against my desk, I took a shot in the dark. My solution? _Svelte Component_! This simple migration to Svelte components with the `transition:persist` and `client:load` attributes cured my ailments. The code mostly remained the same with minor changes.
 
 ### Svelte Theme Toggler
 
@@ -52,9 +52,9 @@ function handleToggleClick() {
 Then add the event listener to the button using Svelte things
 
 ```html
-  <button id="themeToggle" on:click={handleToggleClick}>
-    <!-- Inner HTML -->
-  </button>
+<button id="themeToggle" on:click="{handleToggleClick}">
+  <!-- Inner HTML -->
+</button>
 ```
 
 ### Svelte Mobile Nav Button
@@ -70,7 +70,7 @@ function handleClick() {
 And just like before, add the listener to the button.
 
 ```html
-<button id="hamburger" on:click={handleClick} aria-label="Navigation Button">
+<button id="hamburger" on:click="{handleClick}" aria-label="Navigation Button">
   <!-- Inner HTML -->
 </button>
 ```
@@ -99,8 +99,7 @@ Best Practices: 92
 SEO: 91
 ```
 
-For those paying attention, that's a *whopping* 1% performance hit. Entirely worth the savings in sanity and hair loss.
-
+For those paying attention, that's a _whopping_ 1% performance hit. Entirely worth the savings in sanity and hair loss.
 
 ## Conclusion
 
