@@ -4,7 +4,7 @@ export async function get() {
   return rss({
     title: "Nobody Asked | Blog",
     description: "Everything unsolicited",
-    site: "https://localhost:3000",
+    site: "https://nobody-asked.netlify.app",
     items: await pagesGlobToRssItems(import.meta.glob("./**/*.md")),
     customData: "<language>en-us</language>",
   });
