@@ -2,7 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 slug: /posts/here-we-go-again
 title: "Here We Go Again"
-pubDate: 2023-08-18
+pubDate: 08/15/23
 description: "Ranting about things that have zero impact on my life..."
 author: "Trevor Knutson"
 image:

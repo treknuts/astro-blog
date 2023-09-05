@@ -3,12 +3,12 @@ layout: ../../layouts/ArticleLayout.astro
 slug: posts/multilingual
 title: Multilingual
 author: Treknuts
+pubDate: 08/15/23
 description: "Look at how many ways I can say hello!"
 image:
   url: "https://images.unsplash.com/photo-1692613101426-37cf9831bd79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
   alt: "smooth lines of Geidar Aliev Center downtown Baku, built by Zaha Hadid"
   credit: "Yura Timoshenko"
-pubDate: 2023-25-08
 tags: ["Rant", "Java", "PHP", "Kotlin", "HTML", "JavaScript", "Rust", "C++"]
 draft: false
 ---

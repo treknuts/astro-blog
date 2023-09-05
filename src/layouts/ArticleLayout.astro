@@ -2,16 +2,12 @@
 import BaseLayout from "./BaseLayout.astro";
 import Badge from "../components/Badge.astro";
 import FontAwesomeArrow from "../components/FontAwesomeArrow.astro";
+import formatDate from "../scripts/format-date";
 import "../styles/global.css";
 import { Image } from "astro:assets";
 
 const { frontmatter } = Astro.props;
-const formatted = new Date(frontmatter.pubDate).toLocaleDateString("en-us", {
-  weekday: "long",
-  year: "numeric",
-  month: "short",
-  day: "numeric",
-});
+const formatted = formatDate(frontmatter.pubDate);
 ---
 
 <style>

@@ -8,7 +8,7 @@ image:
   url: "https://images.unsplash.com/photo-1422207049116-cfaf69531072?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8eWluJTIwYW5kJTIweWFuZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
   alt: "monochrome yin yang coffee"
   credit: "Alex Padurariu"
-pubDate: 2023-08-25
+pubDate: 08/25/23
 tags: ["JavaScript", "HTML", "CSS", "Web Design"]
 draft: false
 ---

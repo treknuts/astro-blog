@@ -8,7 +8,7 @@ image:
   url: "https://astro.build/_astro/blog-hero-post-header.bd092747.webp"
   alt: "Graphic of the number three signifying the version three release of Astro."
   credit: "Astro Blog"
-pubDate: 2023-08-25
+pubDate: 09/01/2023
 tags: ["Astro", "HTML", "CSS", "JavaScript", "Svelte"]
 draft: false
 ---
