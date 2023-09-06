@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import Badge from "../components/Badge.astro";
 import FontAwesomeArrow from "../components/FontAwesomeArrow.astro";
 import formatDate from "../scripts/format-date";
 import "../styles/global.css";
 import { Image } from "astro:assets";
+import TagCard from "../components/TagCard.astro";
 
 const { frontmatter } = Astro.props;
 const formatted = formatDate(frontmatter.pubDate);
@@ -22,9 +22,9 @@ const formatted = formatDate(frontmatter.pubDate);
   .tags-container {
     padding: 2em;
     border-radius: 0.5em;
-    background: var(--secondary);
     display: flex;
     flex-wrap: wrap;
+    border: 1px solid var(--secondary);
     justify-content: center;
     gap: 2em;
   }
@@ -84,7 +84,7 @@ const formatted = formatDate(frontmatter.pubDate);
     <div class="tags-container">
       {
         frontmatter.tags.map((tag) => {
-          return <Badge name={tag} />;
+          return <TagCard tag={tag} />;
         })
       }
     </div>

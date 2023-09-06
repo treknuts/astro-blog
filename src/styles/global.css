@@ -198,22 +198,6 @@ header {
   margin: 0;
 }
 
-.tag-element {
-  text-decoration: none;
-  display: grid;
-  place-content: center;
-  width: min(100vw - 2em, 300px);
-  background-color: var(--accent);
-  color: var(--secondary);
-  border-radius: 0.5em;
-  transition: scale 150ms ease;
-}
-
-.tag-element:hover {
-  background-color: var(--primary);
-  scale: 1.05;
-}
-
 .tags {
   display: grid;
   gap: 1em;

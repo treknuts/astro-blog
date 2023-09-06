@@ -2,4 +2,27 @@
 const { tag } = Astro.props;
 ---
 
-<a class="tag-element" href=`/tags/${tag}`><h3>{tag}</h3></a>
+<style>
+  .tag-element {
+    text-decoration: none;
+    display: grid;
+    place-content: center;
+    padding: 0.5em 1em;
+    color: var(--text);
+    border-radius: 0.5em;
+    border: 1px solid var(--secondary);
+    transition: all 250ms ease;
+  }
+
+  .tag-element:hover {
+    background-color: var(--primary);
+    color: #1e1e1e;
+    scale: 1.05;
+  }
+
+  .tag-element p {
+    margin: 0;
+  }
+</style>
+
+<a class="tag-element" href=`/tags/${tag}`><p>{tag}</p></a>
