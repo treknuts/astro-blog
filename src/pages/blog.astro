@@ -1,25 +1,67 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArticleCard from "../components/ArticleCard.astro";
+import TagCard from "../components/TagCard.astro";
 const allPosts = await Astro.glob("../pages/posts/*.md");
 allPosts.sort(
   (a, b) =>
     Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
 );
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 const pageTitle = "Blog";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <h2>Advice worth exactly what you paid for it</h2>
-  <p>
-    I might post some articles about what's going on depending on depression
-    flare ups and children letting me sleep.
-  </p>
-  <div class="article-list">
-    {
-      allPosts.map((post) => {
-        return <ArticleCard article={post} />;
-      })
+<style>
+  .grid-container {
+    display: block;
+  }
+
+  .category-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categories {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  @media screen and (min-width: 636px) {
+    .category-container {
+      align-items: flex-end;
     }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2em;
+    }
+  }
+</style>
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="grid-container">
+    <div class="article-container">
+      <h2>Advice worth exactly what you paid for it</h2>
+      <p>
+        I might post some articles about what's going on depending on depression
+        flare ups and children letting me sleep.
+      </p>
+      <div class="article-list">
+        {
+          allPosts.map((post) => {
+            return <ArticleCard article={post} />;
+          })
+        }
+      </div>
+    </div>
+    <div class="category-container">
+      <h2>Categories</h2>
+      <div class="categories">
+        {tags.map((tag) => <TagCard tag={tag} />)}
+      </div>
+    </div>
   </div>
 </BaseLayout>

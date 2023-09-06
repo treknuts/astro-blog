@@ -12,15 +12,11 @@ const formatted = formatDate(frontmatter.pubDate);
 
 <style>
   .article-container {
-    margin: 0 auto;
     width: min(100vh - 2em, 80ch);
   }
+
   img {
     border-radius: 2em;
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
   }
 
   .tags-container {
@@ -65,30 +61,32 @@ const formatted = formatDate(frontmatter.pubDate);
   }
 </style>
 <BaseLayout pageTitle={frontmatter.title}>
-  <a href="/blog" class="nav-back">
-    <FontAwesomeArrow height="1.5em" />Back to blog
-  </a>
-  <p>{formatted}</p>
-  <Image
-    transition:name={frontmatter.slug}
-    src={frontmatter.image.url}
-    alt={frontmatter.image.alt}
-    width="775"
-    height="500"
-  />
-  <p class="author">
-    Photo credit: <span>{frontmatter.image.credit}</span>
-  </p>
-  <p class="author">
-    Written by <span>{frontmatter.author}</span>
-  </p>
-  <slot />
-  <h2>Tags</h2>
-  <div class="tags-container">
-    {
-      frontmatter.tags.map((tag) => {
-        return <Badge name={tag} />;
-      })
-    }
+  <div class="article-container">
+    <a href="/blog" class="nav-back">
+      <FontAwesomeArrow height="1.5em" />Back to blog
+    </a>
+    <p>{formatted}</p>
+    <Image
+      transition:name={frontmatter.slug}
+      src={frontmatter.image.url}
+      alt={frontmatter.image.alt}
+      width="775"
+      height="500"
+    />
+    <p class="author">
+      Photo credit: <span>{frontmatter.image.credit}</span>
+    </p>
+    <p class="author">
+      Written by <span>{frontmatter.author}</span>
+    </p>
+    <slot />
+    <h2>Tags</h2>
+    <div class="tags-container">
+      {
+        frontmatter.tags.map((tag) => {
+          return <Badge name={tag} />;
+        })
+      }
+    </div>
   </div>
 </BaseLayout>
