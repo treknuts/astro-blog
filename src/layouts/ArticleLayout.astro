@@ -3,7 +3,7 @@ import BaseLayout from "./BaseLayout.astro";
 import FontAwesomeArrow from "../components/FontAwesomeArrow.astro";
 import formatDate from "../scripts/format-date";
 import "../styles/global.css";
-import { Image } from "astro:assets";
+import Image from "../components/Image.astro";
 import TagCard from "../components/TagCard.astro";
 
 const { frontmatter } = Astro.props;
@@ -12,10 +12,11 @@ const formatted = formatDate(frontmatter.pubDate);
 
 <style>
   .article-container {
-    width: min(100vh - 2em, 80ch);
+    width: min(100vw - 2em, 80ch);
+    margin: 0 auto;
   }
 
-  img {
+  .image {
     border-radius: 2em;
   }
 
