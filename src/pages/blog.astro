@@ -16,12 +16,6 @@ const pageTitle = "Blog";
     display: block;
   }
 
-  .category-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .categories {
     display: flex;
     flex-direction: column;
@@ -29,13 +23,9 @@ const pageTitle = "Blog";
   }
 
   @media screen and (min-width: 636px) {
-    .category-container {
-      align-items: flex-end;
-    }
-
     .grid-container {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 3fr 1fr;
       gap: 2em;
     }
   }
@@ -57,7 +47,7 @@ const pageTitle = "Blog";
         }
       </div>
     </div>
-    <div class="category-container">
+    <div>
       <h2>Categories</h2>
       <div class="categories">
         {tags.map((tag) => <TagCard tag={tag} />)}
