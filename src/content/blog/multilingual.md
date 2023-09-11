@@ -1,6 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
-slug: posts/multilingual
 title: Multilingual
 author: Treknuts
 pubDate: 08/15/23
@@ -10,7 +8,6 @@ image:
   alt: "smooth lines of Geidar Aliev Center downtown Baku, built by Zaha Hadid"
   credit: "Yura Timoshenko"
 tags: ["Rant", "Java", "PHP", "Kotlin", "HTML", "JavaScript", "Rust", "C++"]
-draft: false
 ---
 
 ### Hello, World!

@@ -2,12 +2,16 @@
 import BaseLayout from "./BaseLayout.astro";
 import FontAwesomeArrow from "../components/FontAwesomeArrow.astro";
 import formatDate from "../scripts/format-date";
-import "../styles/global.css";
 import { Image } from "astro:assets";
 import TagCard from "../components/TagCard.astro";
+import type { CollectionEntry } from "astro:content";
 
-const { frontmatter } = Astro.props;
-const formatted = formatDate(frontmatter.pubDate);
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, author, pubDate, image, tags } = Astro.props;
+const { slug } = Astro.params;
+
+const formatted = formatDate(pubDate);
 ---
 
 <style>
@@ -63,33 +67,43 @@ const formatted = formatDate(frontmatter.pubDate);
     scale: 1 1;
   }
 </style>
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout pageTitle={title}>
   <a href="/blog" class="nav-back">
     <FontAwesomeArrow height="1.5em" />Back to blog
   </a>
   <p>{formatted}</p>
-  <div class="image-wrapper">
-    <Image
-      transition:name={frontmatter.slug}
-      src={frontmatter.image.url}
-      alt={frontmatter.image.alt}
-      width="1920"
-      height="1080"
-    />
-  </div>
+
+  {
+    image && (
+      <>
+        <div class="image-wrapper">
+          <Image
+            transition:name={slug}
+            src={image.url}
+            alt={image.alt}
+            width="1920"
+            height="1080"
+            format="png"
+          />
+        </div>
+        <p class="author">
+          Photo credit: <span>{image.credit}</span>
+        </p>
+      </>
+    )
+  }
+
   <p class="author">
-    Photo credit: <span>{frontmatter.image.credit}</span>
-  </p>
-  <p class="author">
-    Written by <span>{frontmatter.author}</span>
+    Written by <span>{author}</span>
   </p>
   <slot />
   <h2>Tags</h2>
   <div class="tags-container">
     {
-      frontmatter.tags.map((tag) => {
-        return <TagCard tag={tag} />;
-      })
+      tags &&
+        tags.map((tag) => {
+          return <TagCard tag={tag} />;
+        })
     }
   </div>
 </BaseLayout>

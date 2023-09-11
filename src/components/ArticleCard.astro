@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import formatDate from "../scripts/format-date";
 
 const { article } = Astro.props;
-const formattedDate = formatDate(article.frontmatter.pubDate);
+const formattedDate = formatDate(article.data.pubDate);
 ---
 
 <style>
@@ -71,23 +71,24 @@ const formattedDate = formatDate(article.frontmatter.pubDate);
   }
 </style>
 
-<a class="article-link" href={article.url}>
+<a class="article-link" href=`/blog/${article.slug}`>
   <div class="article-card">
     <div class="image-wrapper">
       <Image
-        transition:name={article.frontmatter.slug}
-        src={article.frontmatter.image.url}
-        alt={article.frontmatter.image.alt}
+        transition:name={article.data.slug}
+        src={article.data.image.url}
+        alt={article.data.image.alt}
         width="310"
         height="225"
+        format="png"
       />
     </div>
     <div class="card-body">
       <h3>
-        {article.frontmatter.title}
+        {article.data.title}
       </h3>
       <p>{formattedDate}</p>
-      <p>{article.frontmatter.description}</p>
+      <p>{article.data.description}</p>
     </div>
   </div>
 </a>

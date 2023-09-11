@@ -1,6 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
-slug: /posts/here-we-go-again
 title: "Here We Go Again"
 pubDate: 08/15/23
 description: "Ranting about things that have zero impact on my life..."
@@ -10,7 +8,6 @@ image:
   alt: "Red barn established in 1918 Located in Southern Saskatchewan"
   credit: "sawyer"
 tags: ["Astro", "Blogging", "Rant"]
-draft: false
 ---
 
 # Well Well Well...

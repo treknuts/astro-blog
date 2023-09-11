@@ -1,6 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
-slug: posts/color-theme
 title: Color themes using DRY principles
 author: Treknuts
 description: "Setting up light and dark themes that users can toggle."
@@ -10,7 +8,6 @@ image:
   credit: "Alex Padurariu"
 pubDate: 08/25/23
 tags: ["JavaScript", "HTML", "CSS", "Web Design"]
-draft: false
 ---
 
 ## Fine! I'll let the user choose...

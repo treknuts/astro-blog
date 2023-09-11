@@ -1,6 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
-slug: posts/astro-v3
 title: Migrating to Astro 3.0!
 author: Treknuts
 description: "My experience as an Astro newbie going from Astro 2.x to 3.0"
@@ -10,7 +8,6 @@ image:
   credit: "Astro Blog"
 pubDate: 09/01/2023
 tags: ["Astro", "HTML", "CSS", "JavaScript", "Svelte"]
-draft: false
 ---
 
 ## Hello, Astro v3.0!
