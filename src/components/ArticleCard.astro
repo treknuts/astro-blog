@@ -75,7 +75,7 @@ const formattedDate = formatDate(article.data.pubDate);
   <div class="article-card">
     <div class="image-wrapper">
       <Image
-        transition:name={article.data.slug}
+        transition:name=`${article.slug}-image`
         src={article.data.image.url}
         alt={article.data.image.alt}
         width="310"

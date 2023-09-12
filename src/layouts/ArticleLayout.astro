@@ -78,7 +78,7 @@ const formatted = formatDate(pubDate);
       <>
         <div class="image-wrapper">
           <Image
-            transition:name={slug}
+            transition:name=`${slug}-image`
             src={image.url}
             alt={image.alt}
             width="1920"
