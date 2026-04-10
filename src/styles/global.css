@@ -1,6 +1,6 @@
 :root {
   --text: #221211;
-  --background: #ffffff;
+  --background: #ffffff90;
   --primary: #51a0a4;
   --secondary: #f0e1e1;
   --accent: #244648;
@@ -8,7 +8,7 @@
 
 [data-theme="dark"] {
   --text: #ffffff;
-  --background: #221211;
+  --background: #22121190;
   --secondary: #242424;
   --accent: #59a8ac;
 }
@@ -58,6 +58,18 @@ html {
   background-color: var(--background);
   color: var(--text);
   font-family: "Poppins", sans-serif;
+}
+
+html[data-theme="dark"] body {
+  background: url(/public/blue-gradient.png);
+}
+
+html[data-theme="light"] body {
+  background: url(/public/blue-green-gradient.png);
+}
+
+main {
+  background: var(--background);
 }
 
 main a {
