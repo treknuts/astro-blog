@@ -3,7 +3,7 @@ title: Migrating to Astro 3.0!
 author: Treknuts
 description: "My experience as an Astro newbie going from Astro 2.x to 3.0"
 image:
-  url: "https://astro.build/_astro/blog-hero-post-header.bd092747.webp"
+  url: "https://images.unsplash.com/photo-1774888912224-2a7ec74422ba?q=80&w=1828&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   alt: "Graphic of the number three signifying the version three release of Astro."
   credit: "Astro Blog"
 pubDate: 09/01/2023
